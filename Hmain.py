@@ -1,13 +1,14 @@
-project_list = [
-    {"sender": "Hawraa", "text": "top secret data", "is_encrypted": True},
-    {"sender": "Zahra", "text": "system firewalls are up", "is_encrypted": True},
-    {"sender": "Fatima", "text": "database backup complete", "is_encrypted": False},
+products_list =[
+    {"name": "Headphones", "price": 25, "rating": 3.5}, 
+    {"name": "Mouse", "price": 60 ,"rating": 4.2},
+    {"name": "Laptop", "price": 800, "rating": 4.8}, 
 ]
-print("-------🔐 Secret Message Shield 🔐--------")
-for message in project_list:
-    if message["is_encrypted"] == True:
-        print(f"🟢 [SAFE] Message from {message['sender']} is fully secured!")
-else:
-    secure_text = message["text"]. upper()
-    print(f"🔴 [RAW] {message['sender']} -> {secure_text}")
-    print("------------------------------------------")
+def check_product(item):
+    tax = item["price"] * 0.10
+    total_price = item["price"] + tax 
+    if item["rating"] >= 4.0:
+        print(f"🔥 {item['name']} (Rating: {item['rating']}) is Top Rated! Total: {total_price}$")  
+    else:
+        print(f" 📦 {item['name']} (Rating: {item['rating']})  Total: {total_price}$")
+for product in products_list:
+    check_product(product)
